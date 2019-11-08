@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\NguoiChoi;
 
-class NguoiChoiController extends Controller
+class GoiCreditController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class NguoiChoiController extends Controller
      */
     public function index()
     {
-        $listNguoiChoi = NguoiChoi::all();
-        return View('nguoi-choi.danh-sach', compact('listNguoiChoi'));
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class NguoiChoiController extends Controller
      */
     public function create()
     {
-        return view('nguoi-choi.form');
+        //
     }
 
     /**
@@ -36,17 +34,7 @@ class NguoiChoiController extends Controller
      */
     public function store(Request $request)
     {
-        $nguoiChoi = new NguoiChoi;
-
-        $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
-        $nguoiChoi->mat_khau = md5($request->mat_khau);
-        $nguoiChoi->email = $request->email;
-        $nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien;
-        $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
-        $nguoiChoi->credit = $request->credit;
-        $nguoiChoi->save();
-
-        return redirect()->route('nguoi-choi.danh-sach');
+        //
     }
 
     /**
@@ -68,9 +56,7 @@ class NguoiChoiController extends Controller
      */
     public function edit($id)
     {
-        $nguoiChoi = NguoiChoi::find($id);
-
-        return View('nguoi-choi.form', compact('nguoiChoi'));
+        //
     }
 
     /**
@@ -82,17 +68,7 @@ class NguoiChoiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $nguoiChoi = NguoiChoi::find($id);
-
-        $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
-        $nguoiChoi->mat_khau = md5($request->mat_khau);
-        $nguoiChoi->email = $request->email;
-        $nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien;
-        $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
-        $nguoiChoi->credit = $request->credit;
-        $nguoiChoi->save();
-
-        return redirect()->route('nguoi-choi.danh-sach');
+        //
     }
 
     /**
@@ -103,9 +79,6 @@ class NguoiChoiController extends Controller
      */
     public function destroy($id)
     {
-        $nguoiChoi = NguoiChoi::find($id);
-        $nguoiChoi->delete();
-
-        return redirect()->route('nguoi-choi.danh-sach');
+        //
     }
 }

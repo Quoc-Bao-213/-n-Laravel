@@ -331,25 +331,21 @@
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
 
+                    <!-- Người Chơi -->
                     <li class="has-submenu">
-                        <a href="#">
-                            <i class="la la-dashboard"></i>Dashboards <div class="arrow-down"></div></a>
-                        <ul class="submenu">
-                            <li>
-                                <a href="index.html">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href="dashboard-2.html">Dashboard 2</a>
-                            </li>
-                        </ul>
+                        <a href="{{ route('nguoi-choi.danh-sach') }}">
+                            <i class="la la-dashboard"></i>Người Chơi
+                        </a>
                     </li>
 
+                    <!-- Lĩnh Vực -->
                     <li class="has-submenu">
                         <a href="{{ route('linh-vuc.danh-sach') }}">
                             <i class="la la-cube"></i>Lĩnh Vực
                         </a>
                     </li>
 
+                    <!-- Câu Hỏi -->
                     <li class="has-submenu">
                         <a href="{{ route('cau-hoi.danh-sach') }}">
                             <i class="la la-clone"></i>Câu Hỏi
