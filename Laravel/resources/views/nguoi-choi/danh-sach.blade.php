@@ -17,6 +17,8 @@
                             <th>Hình đại diện</th>
                             <th>Điểm cao nhất</th>
                             <th>Credit</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
                         </tr>
                     </thead>   
                     <tbody>

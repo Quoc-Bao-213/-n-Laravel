@@ -5,36 +5,28 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title">Danh Sách Câu Hỏi</h4>
-                <a href="{{ route('cau-hoi.them-moi') }}" class="btn btn-primary waves-effect waves-light">Thêm mới</a><br/><br/>
-                <table id="linh-vuc-table" class="table dt-responsive nowrap">
+                <h4 class="header-title">Danh Sách Gói Credit</h4>
+                <a href="{{ route('goi-credit.them-moi') }}" class="btn btn-primary waves-effect waves-light">Thêm mới</a><br/><br/>
+                <table id="goi-credit-table" class="table dt-responsive nowrap">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Nội dung</th>
-                            <th>Lĩnh vực</th>
-                            <th>Phương án A</th>
-                            <th>Phương án B</th>
-                            <th>Phương án C</th>
-                            <th>Phương án D</th>
-                            <th>Đáp án</th>
+                            <th>Tên Gói</th>
+                            <th>Số Credit</th>
+                            <th>Số Tiền</th>
                             <th>Sửa</th>
                             <th>Xóa</th>
                         </tr>
                     </thead>   
                     <tbody>
-                        @foreach($listCauHoi as $cauHoi)  
+                        @foreach($listGoiCredit as $goiCredit)
                         <tr>
-                            <td>{{ $cauHoi->id }}</td>
-                            <td>{{ $cauHoi->noi_dung }}</td>
-                            <td>{{ $cauHoi->LinhVuc->ten_linh_vuc }}</td>
-                            <td>{{ $cauHoi->phuong_an_a }}</td>
-                            <td>{{ $cauHoi->phuong_an_b }}</td>
-                            <td>{{ $cauHoi->phuong_an_c }}</td>
-                            <td>{{ $cauHoi->phuong_an_d }}</td>
-                            <td>{{ $cauHoi->dap_an }}</td>
-                            <td><a href="{{ route('cau-hoi.cap-nhat', ['id' => $cauHoi->id]) }}" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-grease-pencil"></i></a></td>
-                            <td><a href="{{ route('cau-hoi.xoa', ['id' => $cauHoi->id]) }}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-trash-can-outline"></i></a></td>
+                            <td>{{ $goiCredit->id }}</td>
+                            <td>{{ $goiCredit->ten_goi }}</td>
+                            <td>{{ $goiCredit->credit }}</td>
+                            <td>{{ $goiCredit->so_tien }}</td>
+                            <td><a href="{{ route('goi-credit.cap-nhat', ['id' => $goiCredit->id]) }}" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-grease-pencil"></i></a></td>
+                            <td><a href="{{ route('goi-credit.xoa', ['id' => $goiCredit->id]) }}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-trash-can-outline"></i></a></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -74,7 +66,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#linh-vuc-table").DataTable({
+        $("#goi-credit-table").DataTable({
             language:{
                 paginate:{
                     previous:"<i class='mdi mdi-chevron-left'>",

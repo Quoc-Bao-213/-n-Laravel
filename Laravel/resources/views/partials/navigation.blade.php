@@ -352,169 +352,25 @@
                         </a>
                     </li>
 
+                    <!-- Gói Credit -->
                     <li class="has-submenu">
-                        <a href="#"> <i class="la la-briefcase"></i>Elements <div class="arrow-down"></div></a>
-                        <ul class="submenu megamenu">
-                            <li>
-                                <ul>
-                                    <li>
-                                        <a href="ui-buttons.html">Buttons</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-cards.html">Cards</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-tabs-accordions.html">Tabs & Accordions</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-modals.html">Modals</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-progress.html">Progress</a>
-                                    </li>
-                                </ul>
+                        <a href="{{ route('goi-credit.danh-sach') }}"> 
+                            <i class="la la-briefcase"></i>Gói Credit
+                        </a>   
+                        <ul class="submenu">
+                            <li class="has-submenu">
+                                <a href="{{ route('lich-su-mua-credit.danh-sach') }}"><i class="fe-bookmark mr-1"></i> Lịch Sử Mua Credit</a>
                             </li>
-                            <li>
-                                <ul>
-                                    <li>
-                                        <a href="ui-notifications.html">Notifications</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-general.html">General UI</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-typography.html">Typography</a>
-                                    </li>
-                                    <li>
-                                        <a href="ui-grid.html">Grid</a>
-                                    </li>
-                                </ul>
-                            </li>
-                
                         </ul>
                     </li>
 
+                    <!-- Lượt Chơi -->
                     <li class="has-submenu">
-                        <a href="#">
-                            <i class="la la-diamond"></i>Components <div class="arrow-down"></div></a>
+                        <a href="{{ route('luot-choi.danh-sach') }}">
+                            <i class="la la-diamond"></i>Lượt Chơi <div class="arrow-down"></div></a>
                         <ul class="submenu">
                             <li class="has-submenu">
-                                <a href="#"><i class="fe-bookmark mr-1"></i> Forms <div class="arrow-down"></div></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="forms-elements.html">General Elements</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-advanced.html">Advanced</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-validation.html">Validation</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-pickers.html">Pickers</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-wizard.html">Wizard</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-masks.html">Masks</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-summernote.html">Summernote</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-quilljs.html">Quilljs Editor</a>
-                                    </li>
-                                    <li>
-                                        <a href="forms-file-uploads.html">File Uploads</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="#"><i class="fe-grid mr-1"></i> Tables <div class="arrow-down"></div></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="tables-basic.html">Basic Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-datatables.html">Data Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-editable.html">Editable Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-responsive.html">Responsive Tables</a>
-                                    </li>
-                                    <li>
-                                        <a href="tables-tablesaw.html">Tablesaw Tables</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="#"><i class="fe-bar-chart-2 mr-1"></i> Charts <div class="arrow-down"></div></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="charts-apex.html">Apex Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-flot.html">Flot Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-morris.html">Morris Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartjs.html">Chartjs Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-brite.html">Brite Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-chartist.html">Chartist Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-peity.html">Peity Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-sparklines.html">Sparklines Charts</a>
-                                    </li>
-                                    <li>
-                                        <a href="charts-knob.html">Jquery Knob Charts</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="#"><i class="fe-cpu mr-1"></i> Icons <div class="arrow-down"></div></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="icons-feather.html">Feather Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-lineawesome.html">Line Awesome</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-mdi.html">Material Design Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-font-awesome.html">Font Awesome</a>
-                                    </li>
-                                    <li>
-                                        <a href="icons-simple-line.html">Simple Line</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-submenu">
-                                <a href="#"><i class="fe-map mr-1"></i> Maps <div class="arrow-down"></div></a>
-                                <ul class="submenu">
-                                    <li>
-                                        <a href="maps-google.html">Google Maps</a>
-                                    </li>
-                                    <li>
-                                        <a href="maps-vector.html">Vector Maps</a>
-                                    </li>
-                                    <li>
-                                        <a href="maps-mapael.html">Mapael Maps</a>
-                                    </li>
-                                </ul>
+                                <a href="{{ route('chi-tiet-luot-choi.danh-sach') }}"><i class="fe-bookmark mr-1"></i> Chi Tiết Lượt Chơi</a>
                             </li>
                         </ul>
                     </li>

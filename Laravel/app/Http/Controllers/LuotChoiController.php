@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\GoiCredit;
+use App\LuotChoi;
+use App\NguoiChoi;
 
-class GoiCreditController extends Controller
+class LuotChoiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class GoiCreditController extends Controller
      */
     public function index()
     {
-        $listGoiCredit = GoiCredit::all();
-        return View('goi-credit.danh-sach', compact('listGoiCredit'));
+        $listLuotChoi = LuotChoi::all();
+        return View('luot-choi.danh-sach', compact('listLuotChoi'));
     }
 
     /**
@@ -25,7 +26,8 @@ class GoiCreditController extends Controller
      */
     public function create()
     {
-        return View('goi-credit.form');
+        $listNguoiChoi = NguoiChoi::all();
+        return View('luot-choi.form', compact('listNguoiChoi'));
     }
 
     /**
@@ -36,14 +38,14 @@ class GoiCreditController extends Controller
      */
     public function store(Request $request)
     {
-        $goiCredit = new GoiCredit;
-        
-        $goiCredit->ten_goi = $request->ten_goi;
-        $goiCredit->credit = $request->credit;
-        $goiCredit->so_tien = $request->so_tien;
-        $goiCredit->save();
+        $luotChoi = new LuotChoi;
 
-        return redirect()->route('goi-credit.danh-sach');
+        $luotChoi->nguoi_choi_id = $request->nguoi_choi;
+        $luotChoi->so_cau = $request->so_cau;
+        $luotChoi->diem = $request->diem;
+        $luotChoi->save();
+
+        return redirect()->route('luot-choi.danh-sach');
     }
 
     /**
@@ -65,9 +67,10 @@ class GoiCreditController extends Controller
      */
     public function edit($id)
     {
-        $goiCredit = GoiCredit::find($id);
+        $luotChoi = LuotChoi::find($id);
+        $listNguoiChoi = NguoiChoi::all();
 
-        return View('goi-credit.form', compact('goiCredit'));
+        return View('luot-choi.form', compact('luotChoi', 'listNguoiChoi'));
     }
 
     /**
@@ -79,14 +82,14 @@ class GoiCreditController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $goiCredit = GoiCredit::find($id);
+        $luotChoi = LuotChoi::find($id);
 
-        $goiCredit->ten_goi = $request->ten_goi;
-        $goiCredit->credit = $request->credit;
-        $goiCredit->so_tien = $request->so_tien;
-        $goiCredit->save();
+        $luotChoi->nguoi_choi_id = $request->nguoi_choi;
+        $luotChoi->so_cau = $request->so_cau;
+        $luotChoi->diem = $request->diem;
+        $luotChoi->save();
 
-        return redirect()->route('goi-credit.danh-sach');
+        return redirect()->route('luot-choi.danh-sach');
     }
 
     /**
@@ -97,9 +100,9 @@ class GoiCreditController extends Controller
      */
     public function destroy($id)
     {
-        $goiCredit = GoiCredit::find($id);
+        $luotChoi = LuotChoi::find($id);
+        $luotChoi->delete();
 
-        $goiCredit->delete();
-        return redirect()->route('goi-credit.danh-sach');
+        return redirect()->route('luot-choi.danh-sach');
     }
 }

@@ -63,7 +63,7 @@ class LinhVucController extends Controller
     public function edit($id)
     {
         $linhVuc = LinhVuc::find($id);
-        return view('linh-vuc.form', compact('linhVuc'));
+        return View('linh-vuc.form', compact('linhVuc'));
     }
 
     /**
@@ -76,6 +76,7 @@ class LinhVucController extends Controller
     public function update(Request $request, $id)
     {
         $linhVuc = LinhVuc::find($id);
+        
         $linhVuc->ten_linh_vuc = $request->ten_linh_vuc;
         $linhVuc->save();
 
