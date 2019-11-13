@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// /api/linh-vuc load api linhvuc
+Route::get('linh-vuc','API\apiLinhVuc@laydsLinhVuc');
+
+// /api/cau-hoi load api cauhoi them linh vuc
+Route::get('cau-hoi','API\apiCauHoi@laydsCauHoi');
