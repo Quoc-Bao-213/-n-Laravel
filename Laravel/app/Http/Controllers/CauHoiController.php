@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CauHoi;
 use App\LinhVuc;
+use App\Http\Requests\ThemCauHoiRequest;
 
 class CauHoiController extends Controller
 {
@@ -15,7 +16,11 @@ class CauHoiController extends Controller
      */
     public function index()
     {
-        $listCauHoi = CauHoi::all();
+        $linhVuc = LinhVuc::all();
+
+        // Xóa lĩnh vực xóa lun câu hỏi (modelKey)
+        $listCauHoi = CauHoi::whereIn('linh_vuc_id',$linhVuc->modelKeys())->get(); 
+        
         return view('cau-hoi.danh-sach', compact('listCauHoi'));
     }
 
@@ -36,7 +41,7 @@ class CauHoiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ThemCauHoiRequest $request)
     {
         $cauHoi = new CauHoi;
         

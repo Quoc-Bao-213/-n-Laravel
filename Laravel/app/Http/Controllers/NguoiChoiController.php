@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\NguoiChoi;
+use App\Http\Requests\ThemNguoiChoiRequest;
 
 class NguoiChoiController extends Controller
 {
@@ -34,7 +35,7 @@ class NguoiChoiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ThemNguoiChoiRequest $request)
     {
         $nguoiChoi = new NguoiChoi;
 

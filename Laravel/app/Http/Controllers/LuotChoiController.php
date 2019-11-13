@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\LuotChoi;
 use App\NguoiChoi;
+// use App\Http\Requests\ThemLuotChoiRequest;
 
 class LuotChoiController extends Controller
 {

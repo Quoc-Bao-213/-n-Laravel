@@ -41,6 +41,9 @@
 <link href="{{ asset('assets/libs/datatables/buttons.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/libs/datatables/select.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
 <!-- third party css end -->
+
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> -->
 @endsection
 
 @section('js')
@@ -59,6 +62,56 @@
 <script src="{{ asset('assets/libs/pdfmake/pdfmake.min.js') }}"></script>
 <script src="{{ asset('assets/libs/pdfmake/vfs_fonts.js') }}"></script>
 <!-- third party js ends -->
+
+<!-- <script type="text/javascript">
+	$(document).ready(function() {
+	    $("#sa-warning").click(function(){
+	    	Swal.fire({
+			  title: 'Are you sure?',
+			  text: "You won't be able to revert this!",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Yes, delete it!'
+			}).then((result) => {
+                if (result.value) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    ) 
+                }
+			});
+	    });
+	});
+</script> -->
+
+<!-- <script type="text/javascript">
+    function(t){
+        "use strict";
+        var e = function(){};
+        e.prototype.init = function(){
+            t("#sa-warning").click(function(){
+                Swal.fire({
+                    title:"Are you sure?",
+                    text:"You won't be able to revert this!",
+                    type:"warning",
+                    showCancelButton:!0,
+                    confirmButtonColor:"#3085d6",
+                    cancelButtonColor:"#d33",
+                    confirmButtonText:"Yes, delete it!"
+                }).then(function(t){
+                    t.value && Swal.fire("Deleted!", "Your file has been deleted.", "success")
+                })
+            })
+        },
+        t.SweetAlert = new e,t.SweetAlert.Constructor=e
+    }(window.jQuery), function(t){
+        "use strict";
+        window.jQuery.SweetAlert.init()
+    }();
+</script> -->
 
 <script type="text/javascript">
     $(document).ready(function(){

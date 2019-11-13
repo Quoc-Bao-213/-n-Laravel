@@ -12,7 +12,6 @@
                         <tr>
                             <th>ID</th>
                             <th>Tên đăng nhập</th>
-                            <th>Mật khẩu</th>
                             <th>Email</th>
                             <th>Hình đại diện</th>
                             <th>Điểm cao nhất</th>
@@ -26,7 +25,6 @@
                         <tr>
                             <td>{{ $nguoiChoi->id }}</td>
                             <td>{{ $nguoiChoi->ten_dang_nhap }}</td>
-                            <td>{{ $nguoiChoi->mat_khau }}</td>
                             <td>{{ $nguoiChoi->email }}</td>
                             <td>{{ $nguoiChoi->hinh_dai_dien }}</td>
                             <td>{{ $nguoiChoi->diem_cao_nhat }}</td>
