@@ -20,7 +20,7 @@ class QuanTriVienController extends Controller
     	{
     		 return redirect()->route('trang-chu');
     	}
-		return "Đăng nhập thất bại";
+		return redirect('dang-nhap')->with('thongbao',"Sai tài khoản hoặc mật khẩu");
 
     	/*kiem tra tk va mat khau
     	$check = QuanTriVien::where('ten_dang_nhap',$ten_dang_nhap)->first();
@@ -36,7 +36,7 @@ class QuanTriVienController extends Controller
     public function layThongTin()
     {
     	$get = Auth::user();
-        return $get->ten_dang_nhap;
+        return $get;
     }
     public function dangXuat()
     {
