@@ -1,5 +1,9 @@
 <header id="topnav">
-
+<script>
+    $.getJSON('http://127.0.0.1:8000/test', function(data) {
+    //data is the JSON string
+});
+</script>
     <!-- Topbar Start -->
     <div class="navbar-custom">
         <div class="container-fluid">
@@ -127,7 +131,7 @@
                     <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                         <img src="{{ asset('assets/images/users/user-1.jpg') }}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ml-1">
-                            Tạ Quốc Bảo<i class="mdi mdi-chevron-down"></i> 
+                            Adminstrator<i class="mdi mdi-chevron-down"></i> 
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -159,7 +163,7 @@
                         <div class="dropdown-divider"></div>
 
                         <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                        <a href="{{ route('dang-xuat') }}" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Logout</span>
                         </a>

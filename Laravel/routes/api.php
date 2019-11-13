@@ -22,3 +22,6 @@ Route::get('linh-vuc','API\apiLinhVuc@laydsLinhVuc');
 
 // /api/cau-hoi load api cauhoi them linh vuc
 Route::get('cau-hoi','API\apiCauHoi@laydsCauHoi');
+
+// /api/goi-credit load api cauhoi them linh vuc
+Route::get('goi-credit','API\apiCredit@laydsCredit');
