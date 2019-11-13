@@ -5,6 +5,18 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="mb-3 header-title">@if(isset($nguoiChoi)) Cập Nhật @else Thêm @endif Người Chơi</h4>
+
+                <!-- /\ -->
+                @if($errors->any())
+                <div class="alert alert-danger" sty>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li style="font-weight: bold;">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                
                 @if(isset($nguoiChoi))
                 <form action="{{ route('nguoi-choi.xu-ly-cap-nhat', ['id' => $nguoiChoi->id]) }}" method="POST">
                 @else
