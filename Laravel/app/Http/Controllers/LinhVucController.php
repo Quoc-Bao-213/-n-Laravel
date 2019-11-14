@@ -41,7 +41,7 @@ class LinhVucController extends Controller
         $linhVuc->ten_linh_vuc = $request->ten_linh_vuc;
         $linhVuc->save();
 
-        return redirect()->route('linh-vuc.danh-sach');
+        return redirect()->route('linh-vuc.danh-sach')->with('cap-nhat',"Thêm mới thành công");
     }
 
     /**
@@ -81,7 +81,7 @@ class LinhVucController extends Controller
         $linhVuc->ten_linh_vuc = $request->ten_linh_vuc;
         $linhVuc->save();
 
-        return redirect()->route('linh-vuc.danh-sach');
+        return redirect()->route('linh-vuc.danh-sach')->with('cap-nhat',"Cập nhật thành công");
     }
 
     /**
@@ -95,6 +95,6 @@ class LinhVucController extends Controller
         $linhVuc = LinhVuc::find($id);
         $linhVuc->delete();
 
-        return redirect()->route('linh-vuc.danh-sach');
+        return redirect()->route('linh-vuc.danh-sach')->with('cap-nhat',"Xóa thành công");
     }
 }

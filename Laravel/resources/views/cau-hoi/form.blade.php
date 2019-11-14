@@ -57,6 +57,8 @@
                         <input type="text" class="form-control" id="dap_an" name="dap_an" @if(isset($cauHoi)) value="{{ $cauHoi->dap_an }}" @endif>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($cauHoi)) Cập Nhật @else Thêm @endif</button>
+                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
+
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->
