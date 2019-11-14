@@ -54,7 +54,7 @@ class CauHoiController extends Controller
         $cauHoi->dap_an = $request->dap_an;
         $cauHoi->save();
 
-        return redirect()->route('cau-hoi.danh-sach');
+        return redirect()->route('cau-hoi.danh-sach')->with('cap-nhat',"Thêm mới thành công");
     }
 
     /**
@@ -102,7 +102,7 @@ class CauHoiController extends Controller
         $cauHoi->dap_an = $request->dap_an;
         $cauHoi->save();
 
-        return redirect()->route('cau-hoi.danh-sach');
+        return redirect()->route('cau-hoi.danh-sach')->with('cap-nhat',"Cập nhật thành công");
     }
 
     /**
@@ -116,6 +116,6 @@ class CauHoiController extends Controller
         $cauHoi = CauHoi::find($id);
         $cauHoi->delete();
 
-        return redirect()->route('cau-hoi.danh-sach');
+        return redirect()->route('cau-hoi.danh-sach')->with('cap-nhat',"Xóa thành công");
     }
 }

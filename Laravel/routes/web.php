@@ -16,6 +16,7 @@ Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
 Route::post('dang-nhap','QuanTriVienController@xuLyDangNhap')->name('xu-ly-dang-nhap');
 Route::get('dang-xuat','QuanTriVienController@dangXuat')->name('dang-xuat');
 
+
 Route::middleware('auth')->group(function(){
     // Layout Chính
     Route::get('/', function () {

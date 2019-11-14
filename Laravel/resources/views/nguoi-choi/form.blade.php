@@ -50,6 +50,7 @@
                         <input type="text" class="form-control" id="credit" name="credit" @if(isset($nguoiChoi)) value="{{ $nguoiChoi->credit }}" @endif>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($nguoiChoi)) Cập Nhật @else Thêm @endif</button>
+                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

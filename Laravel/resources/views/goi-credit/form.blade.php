@@ -36,6 +36,7 @@
                         <input type="text" class="form-control" id="so_tien" name="so_tien" @if(isset($goiCredit)) value="{{ $goiCredit->so_tien }}" @endif>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($goiCredit)) Cập Nhật @else Thêm @endif</button>
+                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

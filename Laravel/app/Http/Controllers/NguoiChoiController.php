@@ -47,7 +47,7 @@ class NguoiChoiController extends Controller
         $nguoiChoi->credit = $request->credit;
         $nguoiChoi->save();
 
-        return redirect()->route('nguoi-choi.danh-sach');
+        return redirect()->route('nguoi-choi.danh-sach')->with('cap-nhat',"Thêm mới thành công");
     }
 
     /**
@@ -86,14 +86,14 @@ class NguoiChoiController extends Controller
         $nguoiChoi = NguoiChoi::find($id);
 
         $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
-        $nguoiChoi->mat_khau = md5($request->mat_khau);
+        $nguoiChoi->mat_khau = md5($request->mat_khau); //khong nhap mật khẩu cũng lỗi
         $nguoiChoi->email = $request->email;
-        $nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien;
+        //$nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien; update k chọ hình sẽ lỗi
         $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
         $nguoiChoi->credit = $request->credit;
         $nguoiChoi->save();
 
-        return redirect()->route('nguoi-choi.danh-sach');
+        return redirect()->route('nguoi-choi.danh-sach')->with('cap-nhat',"Cập nhật thành công");
     }
 
     /**
@@ -107,6 +107,6 @@ class NguoiChoiController extends Controller
         $nguoiChoi = NguoiChoi::find($id);
         $nguoiChoi->delete();
 
-        return redirect()->route('nguoi-choi.danh-sach');
+        return redirect()->route('nguoi-choi.danh-sach')->with('cap-nhat',"Xóa thành công");
     }
 }

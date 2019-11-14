@@ -28,6 +28,7 @@
                         <input type="text" class="form-control" id="ten_linh_vuc" name="ten_linh_vuc" @if(isset($linhVuc)) value="{{ $linhVuc->ten_linh_vuc }}" @endif>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($linhVuc)) Cập Nhật @else Thêm @endif</button>
+                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

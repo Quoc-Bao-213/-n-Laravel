@@ -29,6 +29,7 @@
                         <input type="text" class="form-control" id="diem" name="diem" @if(isset($luotChoi)) value="{{ $luotChoi->diem }}" @endif>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($luotChoi)) Cập Nhật @else Thêm @endif</button>
+                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

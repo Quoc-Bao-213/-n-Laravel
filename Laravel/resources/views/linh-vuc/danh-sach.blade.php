@@ -1,6 +1,30 @@
 @extends('layout')
 
 @section('main-content')
+@if(session('cap-nhat'))
+        <script type="text/javascript">Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: '{{session('cap-nhat')}}',
+  showConfirmButton: false,
+  timer: 1500
+})</script>
+    @endif
+<!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Admin CSM</a></li>
+                                    <li class="breadcrumb-item active">Lĩnh vực</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Lĩnh Vực</h4>
+                        </div>
+                    </div>
+                </div>     
+                <!-- end page title --> 
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -64,17 +88,17 @@
 <!-- third party js ends -->
 
 <!-- <script type="text/javascript">
-	$(document).ready(function() {
-	    $("#sa-warning").click(function(){
-	    	Swal.fire({
-			  title: 'Are you sure?',
-			  text: "You won't be able to revert this!",
-			  icon: 'warning',
-			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: 'Yes, delete it!'
-			}).then((result) => {
+    $(document).ready(function() {
+        $("#sa-warning").click(function(){
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
                 if (result.value) {
                     Swal.fire(
                         'Deleted!',
@@ -82,9 +106,9 @@
                         'success'
                     ) 
                 }
-			});
-	    });
-	});
+            });
+        });
+    });
 </script> -->
 
 <!-- <script type="text/javascript">

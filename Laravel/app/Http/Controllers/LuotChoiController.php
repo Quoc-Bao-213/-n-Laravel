@@ -46,7 +46,7 @@ class LuotChoiController extends Controller
         $luotChoi->diem = $request->diem;
         $luotChoi->save();
 
-        return redirect()->route('luot-choi.danh-sach');
+        return redirect()->route('luot-choi.danh-sach')->with('cap-nhat',"Thêm mới thành công");
     }
 
     /**
@@ -90,7 +90,7 @@ class LuotChoiController extends Controller
         $luotChoi->diem = $request->diem;
         $luotChoi->save();
 
-        return redirect()->route('luot-choi.danh-sach');
+        return redirect()->route('luot-choi.danh-sach')->with('cap-nhat',"Cập nhật thành công");
     }
 
     /**
@@ -104,6 +104,6 @@ class LuotChoiController extends Controller
         $luotChoi = LuotChoi::find($id);
         $luotChoi->delete();
 
-        return redirect()->route('luot-choi.danh-sach');
+        return redirect()->route('luot-choi.danh-sach')->with('cap-nhat',"Xóa thành công");
     }
 }
