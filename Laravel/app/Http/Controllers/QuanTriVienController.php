@@ -36,7 +36,7 @@ class QuanTriVienController extends Controller
     public function layThongTin()
     {
     	$get = Auth::user();
-        return $get->ten_dang_nhap;
+        return $get;
     }
     public function dangXuat()
     {
