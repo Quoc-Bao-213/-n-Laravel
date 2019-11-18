@@ -1,15 +1,6 @@
 @extends('layout')
 
 @section('main-content')
-@if(session('cap-nhat'))
-        <script type="text/javascript">Swal.fire({
-  position: 'top-end',
-  icon: 'success',
-  title: '{{session('cap-nhat')}}',
-  showConfirmButton: false,
-  timer: 1500
-})</script>
-    @endif
 <!-- start page title -->
                 <div class="row">
                     <div class="col-12">
@@ -30,7 +21,6 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="header-title">Danh Sách Lượt Chơi</h4>
-                <a href="{{ route('luot-choi.them-moi') }}" class="btn btn-primary waves-effect waves-light">Thêm mới</a><br/><br/>
                 <table id="luot-choi-table" class="table dt-responsive nowrap">
                     <thead>
                         <tr>
@@ -38,8 +28,6 @@
                             <th>Tên Người Chơi</th>
                             <th>Số Câu</th>
                             <th>Điểm</th>
-                            <th>Sửa</th>
-                            <th>Xóa</th>
                         </tr>
                     </thead>   
                     <tbody>
@@ -49,8 +37,6 @@
                             <td>{{ $luotChoi->NguoiChoi->ten_dang_nhap }}</td>
                             <td>{{ $luotChoi->so_cau }}</td>
                             <td>{{ $luotChoi->diem }}</td>
-                            <td><a href="{{ route('luot-choi.cap-nhat', ['id' => $luotChoi->id]) }}" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-grease-pencil"></i></a></td>
-                            <td><a href="{{ route('luot-choi.xoa', ['id' => $luotChoi->id]) }}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-trash-can-outline"></i></a></td>
                         </tr>
                         @endforeach
                     </tbody>

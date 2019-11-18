@@ -25,7 +25,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="ten_dang_nhap">Tên đăng nhập</label>
-                        <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap" @if(isset($nguoiChoi)) value="{{ $nguoiChoi->ten_dang_nhap }}" @endif>
+                        <input type="text" class="form-control" id="ten_dang_nhap" name="ten_dang_nhap" @if(isset($nguoiChoi)) disabled value="{{ $nguoiChoi->ten_dang_nhap }}" @endif>
                     </div>
                     <div class="form-group">
                         <label for="mat_khau">Mật khẩu</label>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" name="email" @if(isset($nguoiChoi)) value="{{ $nguoiChoi->email }}" @endif>
+                        <input type="text" class="form-control" id="email" name="email" pattern="[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" required @if(isset($nguoiChoi)) disabled value="{{ $nguoiChoi->email }}" @endif>
                     </div>
                     <!-- START -->
                     <div class="form-group">
