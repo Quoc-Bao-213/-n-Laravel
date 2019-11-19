@@ -12,7 +12,7 @@
 */
 // Đăng nhập
 Route::get('test','QuanTriVienController@layThongTin')->name('thong-tin');
-Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap');
+Route::get('dang-nhap','QuanTriVienController@dangNhap')->name('dang-nhap')->middleware('guest');
 Route::post('dang-nhap','QuanTriVienController@xuLyDangNhap')->name('xu-ly-dang-nhap');
 Route::get('dang-xuat','QuanTriVienController@dangXuat')->name('dang-xuat');
 
@@ -83,11 +83,6 @@ Route::middleware('auth')->group(function(){
     Route::prefix('luot-choi')->group(function() {
         Route::name('luot-choi.')->group(function() {
             Route::get('/', 'LuotChoiController@index')->name('danh-sach');
-            Route::get('them-moi', 'LuotChoiController@create')->name('them-moi');
-            Route::post('them-moi', 'LuotChoiController@store')->name('xu-ly-them-moi');
-            Route::get('cap-nhat/{id}', 'LuotChoiController@edit')->name('cap-nhat');
-            Route::post('cap-nhat/{id}', 'LuotChoiController@update')->name('xu-ly-cap-nhat');
-            Route::get('xoa/{id}', 'LuotChoiController@destroy')->name('xoa');
         });
     });
 

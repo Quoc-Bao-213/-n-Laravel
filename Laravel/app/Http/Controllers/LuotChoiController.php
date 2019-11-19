@@ -27,8 +27,7 @@ class LuotChoiController extends Controller
      */
     public function create()
     {
-        $listNguoiChoi = NguoiChoi::all();
-        return View('luot-choi.form', compact('listNguoiChoi'));
+        
     }
 
     /**
@@ -39,14 +38,7 @@ class LuotChoiController extends Controller
      */
     public function store(Request $request)
     {
-        $luotChoi = new LuotChoi;
-
-        $luotChoi->nguoi_choi_id = $request->nguoi_choi;
-        $luotChoi->so_cau = $request->so_cau;
-        $luotChoi->diem = $request->diem;
-        $luotChoi->save();
-
-        return redirect()->route('luot-choi.danh-sach')->with('cap-nhat',"Thêm mới thành công");
+        
     }
 
     /**
@@ -68,10 +60,7 @@ class LuotChoiController extends Controller
      */
     public function edit($id)
     {
-        $luotChoi = LuotChoi::find($id);
-        $listNguoiChoi = NguoiChoi::all();
-
-        return View('luot-choi.form', compact('luotChoi', 'listNguoiChoi'));
+        
     }
 
     /**
@@ -83,14 +72,7 @@ class LuotChoiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $luotChoi = LuotChoi::find($id);
-
-        $luotChoi->nguoi_choi_id = $request->nguoi_choi;
-        $luotChoi->so_cau = $request->so_cau;
-        $luotChoi->diem = $request->diem;
-        $luotChoi->save();
-
-        return redirect()->route('luot-choi.danh-sach')->with('cap-nhat',"Cập nhật thành công");
+        
     }
 
     /**
@@ -101,9 +83,6 @@ class LuotChoiController extends Controller
      */
     public function destroy($id)
     {
-        $luotChoi = LuotChoi::find($id);
-        $luotChoi->delete();
-
-        return redirect()->route('luot-choi.danh-sach')->with('cap-nhat',"Xóa thành công");
+        
     }
 }

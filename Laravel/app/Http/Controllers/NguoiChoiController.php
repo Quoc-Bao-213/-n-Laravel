@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\NguoiChoi;
-use App\Http\Requests\ThemNguoiChoiRequest;
+use App\Http\Requests\ThemNguoiChoiRequest; 
 
 class NguoiChoiController extends Controller
 {
@@ -39,14 +39,19 @@ class NguoiChoiController extends Controller
     {
         $nguoiChoi = new NguoiChoi;
 
-        $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
-        $nguoiChoi->mat_khau = md5($request->mat_khau);
-        $nguoiChoi->email = $request->email;
-        $nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien;
-        $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
-        $nguoiChoi->credit = $request->credit;
-        $nguoiChoi->save();
-
+        if (NguoiChoi::where('ten_dang_nhap', '=', $request->ten_dang_nhap)->exists()){
+            return redirect()->route('nguoi-choi.them-moi');
+        }
+        else{
+            $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
+            $nguoiChoi->mat_khau = md5($request->mat_khau);
+            $nguoiChoi->email = $request->email;
+            $nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien;
+            $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
+            $nguoiChoi->credit = $request->credit;
+            $nguoiChoi->save();
+        }
+            
         return redirect()->route('nguoi-choi.danh-sach')->with('cap-nhat',"Thêm mới thành công");
     }
 
@@ -85,9 +90,9 @@ class NguoiChoiController extends Controller
     {
         $nguoiChoi = NguoiChoi::find($id);
 
-        $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
+        // $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
         $nguoiChoi->mat_khau = md5($request->mat_khau); //khong nhap mật khẩu cũng lỗi
-        $nguoiChoi->email = $request->email;
+        // $nguoiChoi->email = $request->email;
         //$nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien; update k chọ hình sẽ lỗi
         $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
         $nguoiChoi->credit = $request->credit;
