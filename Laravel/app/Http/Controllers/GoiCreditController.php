@@ -81,7 +81,6 @@ class GoiCreditController extends Controller
     public function update(Request $request, $id)
     {
         $goiCredit = GoiCredit::find($id);
-
         $goiCredit->ten_goi = $request->ten_goi;
         $goiCredit->credit = $request->credit;
         $goiCredit->so_tien = $request->so_tien;
