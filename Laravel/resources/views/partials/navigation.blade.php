@@ -154,6 +154,7 @@
                             <span>Settings</span>
                         </a>
 
+
                         <div class="dropdown-divider"></div>
 
                         <!-- item-->

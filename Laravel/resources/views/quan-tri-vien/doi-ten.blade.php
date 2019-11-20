@@ -15,21 +15,17 @@
                     </ul>
                 </div>
                 @endif
-                <form action="{{ route('quan-tri-vien.xu-ly-cap-nhat', ['id' => $quanTriVien->id]) }}" method="POST">
+                <form action="{{ route('quan-tri-vien.xu-ly-doi-ten', ['id' => $quanTriVien->id]) }}" method="POST">
 
                     @csrf
                     <div class="form-group">
-                                <label for="ten_dang_nhap">Tên đăng nhập:</label>
-                                <input type="text" disabled class="form-control" id="ten_dang_nhap" name="ten_dang_nhap" @if(isset($quanTriVien)) value="{{ $quanTriVien->ten_dang_nhap }}" @endif>
-                        </div>
-                        <div class="form-group">
-                            <label for="mat_khau_hien_tai">Mật khẩu hiện tại:</label>
-                            <input type="password" class="form-control" id="mat_khau_hien_tai" name="mat_khau_hien_tai">
-                        </div>
-                        <div class="form-group">
-                            <label for="mat_khau_moi">Mật khẩu Mới:</label>
-                            <input type="password" class="form-control" id="mat_khau_moi" name="mat_khau_moi">
-                        </div>
+						<label for="ten_dang_nhap">Tên đăng nhập:</label>
+						<input type="text" disabled class="form-control" id="ten_dang_nhap" name="ten_dang_nhap" @if(isset($quanTriVien)) value="{{ $quanTriVien->ten_dang_nhap }}" @endif>
+					</div>
+						<div class="form-group">
+						<label for="ho_ten">Họ tên:</label>
+						<input type="text" class="form-control" id="ho_ten" name="ho_ten" @if(isset($quanTriVien)) value="{{ $quanTriVien->ho_ten }}" @endif>
+					</div>
                         
                         <button type="submit" class="btn btn-primary waves-effect waves-light">Cập nhật</button>
                     <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>

@@ -28,6 +28,8 @@ Route::middleware('auth')->group(function(){
             Route::get('/', "QuanTriVienController@index")->name('thong-tin');
             Route::get('cap-nhat/{id}', "QuanTriVienController@edit")->name('cap-nhat');
             Route::post('cap-nhat/{id}', "QuanTriVienController@update")->name('xu-ly-cap-nhat');
+            Route::get('doi-ten/{id}', "QuanTriVienController@editten")->name('doi-ten');
+            Route::post('doi-ten/{id}', "QuanTriVienController@doiten")->name('xu-ly-doi-ten');
         });
     });
 

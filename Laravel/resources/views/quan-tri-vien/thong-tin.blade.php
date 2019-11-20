@@ -28,13 +28,13 @@
 <!-- third party js ends -->
 @endsection
 @section('main-content')
-@if(session('cap-nhat'))
+    @if(session('cap-nhat'))
         <script type="text/javascript">Swal.fire({
   position: 'top-end',
-  icon: 'success',
+  icon: 'warning',
   title: '{{session('cap-nhat')}}',
   showConfirmButton: false,
-  timer: 1500
+  timer: 2500
 })</script>
     @endif
 <div class="row">
@@ -67,7 +67,8 @@
                             <th>ID</th>
                             <th>Tên đăng nhập</th>
                             <th>Họ tên</th>
-                            <th>Cập nhật</th>
+                            <th>Đổi tên</th>
+                            <th>Đổi mật khẩu</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -77,6 +78,9 @@
                                     <th>{{ $quanTriVien->id }}</th>
                                     <th>{{ $quanTriVien->ten_dang_nhap }}</th>
                                     <th>{{ $quanTriVien->ho_ten }}</th>
+                                    <th>
+                                        <a href="{{ route('quan-tri-vien.doi-ten', ['id' => $quanTriVien->id]) }}" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-grease-pencil"></i></a>
+                                    </th>
                                     <th>
                                         <a href="{{ route('quan-tri-vien.cap-nhat', ['id' => $quanTriVien->id]) }}" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-grease-pencil"></i></a>
                                     </th>
