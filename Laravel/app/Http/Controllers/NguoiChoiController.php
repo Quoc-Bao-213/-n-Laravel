@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\NguoiChoi;
 use App\Http\Requests\ThemNguoiChoiRequest; 
+use Illuminate\Support\Facades\Hash;
 
 class NguoiChoiController extends Controller
 {
@@ -40,11 +41,11 @@ class NguoiChoiController extends Controller
         $nguoiChoi = new NguoiChoi;
 
         if (NguoiChoi::where('ten_dang_nhap', '=', $request->ten_dang_nhap)->exists()){
-            return redirect()->route('nguoi-choi.them-moi');
+            return redirect()->route('nguoi-choi.them-moi')->with('cap-nhat',"Tên tài khoản đã tồn tại");;
         }
         else{
             $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
-            $nguoiChoi->mat_khau = md5($request->mat_khau);
+            $nguoiChoi->mat_khau = Hash::make($request->mat_khau);
             $nguoiChoi->email = $request->email;
             $nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien;
             $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
@@ -90,15 +91,18 @@ class NguoiChoiController extends Controller
     {
         $nguoiChoi = NguoiChoi::find($id);
 
-        // $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
-        $nguoiChoi->mat_khau = md5($request->mat_khau); //khong nhap mật khẩu cũng lỗi
-        // $nguoiChoi->email = $request->email;
-        //$nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien; update k chọ hình sẽ lỗi
-        $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
-        $nguoiChoi->credit = $request->credit;
-        $nguoiChoi->save();
-
-        return redirect()->route('nguoi-choi.danh-sach')->with('cap-nhat',"Cập nhật thành công");
+        if (!Hash::check($request->xac_nhan_mat_khau_cu, $nguoiChoi->mat_khau)){
+            // Sửa lại (validation)
+            return redirect()->route('nguoi-choi.danh-sach')->with('cap-nhat-2',"Mật khẩu cũ không trùng khớp");
+        }
+        else{
+            $nguoiChoi->mat_khau = Hash::make($request->mat_khau);
+            $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
+            $nguoiChoi->credit = $request->credit;
+            $nguoiChoi->save();
+        
+            return redirect()->route('nguoi-choi.danh-sach')->with('cap-nhat',"Cập nhật thành công");
+        }  
     }
 
     /**

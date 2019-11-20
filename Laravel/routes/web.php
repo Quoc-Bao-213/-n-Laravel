@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function(){
             Route::post('cap-nhat/{id}', 'LinhVucController@update')->name('xu-ly-cap-nhat');
             Route::get('xoa/{id}', 'LinhVucController@destroy')->name('xoa');
         });
-    });
+    }); 
 
     // Layout Câu Hỏi
     Route::prefix('cau-hoi')->group(function() {

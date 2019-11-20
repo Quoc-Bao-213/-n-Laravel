@@ -29,7 +29,7 @@ class ThemCauHoiRequest extends FormRequest
             'phuong_an_b' => 'required',
             'phuong_an_c' => 'required',
             'phuong_an_d' => 'required',
-            'dap_an' => 'required',
+            'dap_an' => 'required'
         ];
     }
 
@@ -41,7 +41,7 @@ class ThemCauHoiRequest extends FormRequest
             'phuong_an_b.required' => 'Vui lòng nhập phương án B',
             'phuong_an_c.required' => 'Vui lòng nhập phương án C',
             'phuong_an_d.required' => 'Vui lòng nhập phương án D',
-            'dap_an.required' => 'Vui lòng nhập đáp án đúng',
+            'dap_an.required' => 'Vui lòng nhập đáp án đúng'     
         ];
     }
 }

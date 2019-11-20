@@ -19,19 +19,8 @@ class QuanTriVienController extends Controller
     	if(Auth::attempt(['ten_dang_nhap' => $ten_dang_nhap,'password' => $mat_khau]))
     	{
     		 return redirect()->route('trang-chu');
-    	}
+    	} 
 		return redirect('dang-nhap')->with('thongbao',"Sai tài khoản hoặc mật khẩu");
-
-    	/*kiem tra tk va mat khau
-    	$check = QuanTriVien::where('ten_dang_nhap',$ten_dang_nhap)->first();
-    	if($check == null)
-    	{
-    		return "Sai tên tài khoản";
-    	}
-    	if(!Hash::check($mat_khau,$check->mat_khau)){
-    		return "Sai mật khẩu";
-    	}
-    	return "Đăng nhập thành công";*/
     }
     public function layThongTin()
     {

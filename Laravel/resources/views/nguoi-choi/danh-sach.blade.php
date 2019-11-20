@@ -7,7 +7,16 @@
   icon: 'success',
   title: '{{session('cap-nhat')}}',
   showConfirmButton: false,
-  timer: 1500
+  timer: 2500
+})</script>
+    @endif
+    @if(session('cap-nhat-2'))
+        <script type="text/javascript">Swal.fire({
+  position: 'top-end',
+  icon: 'error',
+  title: '{{session('cap-nhat-2')}}',
+  showConfirmButton: false,
+  timer: 2500
 })</script>
     @endif
 <!-- start page title -->

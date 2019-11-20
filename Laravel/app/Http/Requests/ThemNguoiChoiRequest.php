@@ -25,8 +25,9 @@ class ThemNguoiChoiRequest extends FormRequest
     {
         return [
             'ten_dang_nhap' => 'required',
-            'mat_khau' => 'required',
-            'email' => 'required',
+            'mat_khau' => 'required|min:8',
+            'xac_nhan_mat_khau' => 'required|same:mat_khau',
+            'email' => 'required|email',
             'hinh_dai_dien' => 'required',
             'diem_cao_nhat' => 'required',
             'credit' => 'required'
@@ -38,10 +39,18 @@ class ThemNguoiChoiRequest extends FormRequest
         return [
             'ten_dang_nhap.required' => 'Vui lòng nhập tên đăng nhập',
             'mat_khau.required' => 'Vui lòng nhập mật khẩu',
+            'xac_nhan_mat_khau.required' => 'Vui lòng nhập lại mật khẩu',
+            'xac_nhan_mat_khau_cu.required' => 'vui lòng nhập lại mật khẩu cũ',
             'email.required' => 'Vui lòng nhập email',
             'hinh_dai_dien.required' => 'Vui lòng chọn hình đại diện',
             'diem_cao_nhat.required' => 'Vui lòng nhập điểm',
             'credit.required' => 'Vui lòng nhập số credit',
+
+            'mat_khau.min' => 'Mật khẩu phải từ 8 kí tự trở lên',
+
+            'xac_nhan_mat_khau.same' => 'Không trùng khớp với mật khẩu',
+
+            'email.email' => 'Email phải đúng định dạng'
         ];
     }
 }
