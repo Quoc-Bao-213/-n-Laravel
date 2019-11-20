@@ -22,6 +22,16 @@ Route::middleware('auth')->group(function(){
     Route::get('/', function () {
         return view('layout');
     })->name('trang-chu');;
+    //Layout thong tin admin
+    Route::prefix('quan-tri-vien')->group(function () {
+        Route::name('quan-tri-vien.')->group(function () {
+            Route::get('/', "QuanTriVienController@index")->name('thong-tin');
+            Route::get('cap-nhat/{id}', "QuanTriVienController@edit")->name('cap-nhat');
+            Route::post('cap-nhat/{id}', "QuanTriVienController@update")->name('xu-ly-cap-nhat');
+            Route::get('doi-ten/{id}', "QuanTriVienController@editten")->name('doi-ten');
+            Route::post('doi-ten/{id}', "QuanTriVienController@doiten")->name('xu-ly-doi-ten');
+        });
+    });
 
     // Layout Lĩnh Vực
     Route::prefix('linh-vuc')->group(function() {
@@ -89,6 +99,13 @@ Route::middleware('auth')->group(function(){
     Route::prefix('lich-su-mua-credit')->group(function() {
         Route::name('lich-su-mua-credit.')->group(function() {
             Route::get('/', 'LichSuMuaCreditController@index')->name('danh-sach');
+        });
+    });
+    // Layout Khôi phục
+    Route::prefix('khoi-phuc')->group(function() {
+        Route::name('khoi-phuc.')->group(function() {
+            Route::get('/', 'khoiphucController@index')->name('danh-sach');
+            Route::get('khoiPhuc/{id}', 'khoiphucController@khoiPhuc')->name('khoiPhuc');
         });
     });
 });
