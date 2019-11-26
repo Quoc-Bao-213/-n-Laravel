@@ -17,10 +17,10 @@
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Admin CSM</a></li>
-                                    <li class="breadcrumb-item active">Lĩnh vực</li>
+                                    <li class="breadcrumb-item active">Cấu Hình App</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Lĩnh Vực</h4>
+                            <h4 class="page-title">Cấu Hình App</h4>
                         </div>
                     </div>
                 </div>     
@@ -29,29 +29,29 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title">Danh Sách Lĩnh Vực</h4>
-                <a href="{{ route('linh-vuc.them-moi') }}" class="btn btn-primary waves-effect waves-light">Thêm mới</a><br/><br/>
-                <table id="linh-vuc-table" class="table dt-responsive nowrap">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tên Lĩnh Vực</th>
-                            <th>Sửa</th>
-                            <th>Xóa</th>
-                        </tr>
-                    </thead>   
-                    <tbody>
-                        @foreach($listLinhVuc as $linhVuc)
-                        <tr>
-                            <td>{{ $linhVuc->id }}</td>
-                            <td>{{ $linhVuc->ten_linh_vuc }}</td>
-                            <td><a href="{{ route('linh-vuc.cap-nhat', ['id' => $linhVuc->id]) }}" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-grease-pencil"></i></a></td>
-                            <td><a href="{{ route('linh-vuc.xoa', ['id' => $linhVuc->id]) }}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-trash-can-outline"></i></a></td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-
+                <h4 class="header-title">Cấu hình App</h4>
+                    <table id="linh-vuc-table" class="table dt-responsive nowrap">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cơ Hội Sai</th>
+                                <th>Thời Gian Trả Lời</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>   
+                        <tbody>
+                            @foreach($lstCauHinhApp as $cauHinhApp)  
+                            <tr>
+                                <td>{{ $cauHinhApp->id }}</td>
+                                <td>{{ $cauHinhApp->co_hoi_sai }}</td>
+                                <td>{{ $cauHinhApp->thoi_gian_tra_loi }}</td>
+                                <td><a href="{{ route('cau-hinh-app.cap-nhat', ['id' => $cauHinhApp->id]) }}" class="btn btn-success waves-effect waves-light"><i class="mdi mdi-grease-pencil"></i></a></td>
+                                <td><a href="{{ route('cau-hinh-app.xoa', ['id' => $cauHinhApp->id]) }}" class="btn btn-danger waves-effect waves-light"><i class="mdi mdi-trash-can-outline"></i></a></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
@@ -65,9 +65,6 @@
 <link href="{{ asset('assets/libs/datatables/buttons.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/libs/datatables/select.bootstrap4.css') }}" rel="stylesheet" type="text/css" />
 <!-- third party css end -->
-
-<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> -->
 @endsection
 
 @section('js')

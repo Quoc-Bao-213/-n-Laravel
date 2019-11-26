@@ -28,9 +28,9 @@ class ThemNguoiChoiRequest extends FormRequest
             'mat_khau' => 'required|min:8',
             'xac_nhan_mat_khau' => 'required|same:mat_khau',
             'email' => 'required|email',
-            'hinh_dai_dien' => 'required',
-            'diem_cao_nhat' => 'required',
-            'credit' => 'required'
+            'hinh_dai_dien' => 'required|image',
+            'diem_cao_nhat' => 'required|numeric',
+            'credit' => 'required|numeric'
         ];
     }
 
@@ -50,7 +50,12 @@ class ThemNguoiChoiRequest extends FormRequest
 
             'xac_nhan_mat_khau.same' => 'Không trùng khớp với mật khẩu',
 
-            'email.email' => 'Email phải đúng định dạng'
+            'email.email' => 'Email phải đúng định dạng',
+
+            'hinh_dai_dien.image' => 'Hình ảnh phải đúng định dạng',
+
+            'diem_cao_nhat.numeric' => 'Chỉ được nhập số',
+            'credit.numeric' => 'Chỉ được nhập số'
         ];
     }
 }

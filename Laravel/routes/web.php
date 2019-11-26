@@ -101,11 +101,46 @@ Route::middleware('auth')->group(function(){
             Route::get('/', 'LichSuMuaCreditController@index')->name('danh-sach');
         });
     });
-    // Layout Khôi phục
+
+    // Layout Khôi Phục
     Route::prefix('khoi-phuc')->group(function() {
         Route::name('khoi-phuc.')->group(function() {
             Route::get('/', 'khoiphucController@index')->name('danh-sach');
             Route::get('khoiPhuc/{id}', 'khoiphucController@khoiPhuc')->name('khoiPhuc');
+        });
+    });
+
+    // Layout Cấu Hình App
+    Route::prefix('cau-hinh-app')->group(function() {
+        Route::name('cau-hinh-app.')->group(function() {
+            Route::get('/', 'AppController@index')->name('danh-sach');
+            Route::get('cap-nhat/{id}', 'AppController@edit')->name('cap-nhat');
+            Route::post('cap-nhat/{id}', 'AppController@update')->name('xu-ly-cap-nhat');
+            Route::get('xoa/{id}', 'AppController@destroy')->name('xoa');
+        });
+    });
+
+    // Layout Cấu Hình Điểm Câu Hỏi
+    Route::prefix('cau-hinh-diem')->group(function() {
+        Route::name('cau-hinh-diem.')->group(function() {
+            Route::get('/', 'DiemCauHoiController@index')->name('danh-sach');
+            Route::get('them-moi', 'DiemCauHoiController@create')->name('them-moi');
+            Route::post('them-moi', 'DiemCauHoiController@store')->name('xu-ly-them-moi');
+            Route::get('cap-nhat/{id}', 'DiemCauHoiController@edit')->name('cap-nhat');
+            Route::post('cap-nhat/{id}', 'DiemCauHoiController@update')->name('xu-ly-cap-nhat');
+            Route::get('xoa/{id}', 'DiemCauHoiController@destroy')->name('xoa');
+        });
+    });
+
+    // Layout Cấu Hình Trợ Giúp
+    Route::prefix('cau-hinh-tro-giup')->group(function() {
+        Route::name('cau-hinh-tro-giup.')->group(function() {
+            Route::get('/', 'TroGiupController@index')->name('danh-sach');
+            Route::get('them-moi', 'TroGiupController@create')->name('them-moi');
+            Route::post('them-moi', 'TroGiupController@store')->name('xu-ly-them-moi');
+            Route::get('cap-nhat/{id}', 'TroGiupController@edit')->name('cap-nhat');
+            Route::post('cap-nhat/{id}', 'TroGiupController@update')->name('xu-ly-cap-nhat');
+            Route::get('xoa/{id}', 'TroGiupController@destroy')->name('xoa');
         });
     });
 });

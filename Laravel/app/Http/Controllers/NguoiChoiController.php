@@ -47,7 +47,11 @@ class NguoiChoiController extends Controller
             $nguoiChoi->ten_dang_nhap = $request->ten_dang_nhap;
             $nguoiChoi->mat_khau = Hash::make($request->mat_khau);
             $nguoiChoi->email = $request->email;
-            $nguoiChoi->hinh_dai_dien = $request->hinh_dai_dien;
+
+            $file = $request->hinh_dai_dien;
+            $fileName = $file->getClientOriginalName('hinh_dai_dien');
+            $nguoiChoi->hinh_dai_dien = $fileName;
+
             $nguoiChoi->diem_cao_nhat = $request->diem_cao_nhat;
             $nguoiChoi->credit = $request->credit;
             $nguoiChoi->save();

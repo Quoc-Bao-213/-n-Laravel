@@ -68,7 +68,7 @@ class QuanTriVienController extends Controller
     {
         // đổi tên quản trị viên vào database
             $quanTriVien = QuanTriVien::find($id);
-            $quanTriVien->ho_ten  = $request->ho_ten;
+            $quanTriVien->ho_ten = $request->ho_ten;
             $quanTriVien->save();
             return redirect()->route('quan-tri-vien.thong-tin')->with('cap-nhat',"Cập nhật thành công");
     }

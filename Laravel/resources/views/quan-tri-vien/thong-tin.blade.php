@@ -31,7 +31,7 @@
     @if(session('cap-nhat'))
         <script type="text/javascript">Swal.fire({
   position: 'top-end',
-  icon: 'warning',
+  icon: 'success',
   title: '{{session('cap-nhat')}}',
   showConfirmButton: false,
   timer: 2500

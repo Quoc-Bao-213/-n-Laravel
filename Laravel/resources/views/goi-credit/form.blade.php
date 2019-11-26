@@ -27,7 +27,7 @@
                         <span class="text-danger">{{ $errors->first('so_tien') }}</span>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($goiCredit)) Cập Nhật @else Thêm @endif</button>
-                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
+                    <a class="btn btn-warning" href="{{ route('goi-credit.danh-sach') }}">Hủy</a>
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

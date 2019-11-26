@@ -25,8 +25,9 @@ class ThemGoiCreditRequest extends FormRequest
     {
         return [
             'ten_goi' => 'required',
-            'credit' => 'required',
-            'so_tien' => 'required',
+            'credit' => 'required|numeric',
+            'so_tien' => 'required|numeric',
+
         ];
     }
 
@@ -36,6 +37,9 @@ class ThemGoiCreditRequest extends FormRequest
             'ten_goi.required' => 'Vui lòng nhập tên gói',
             'credit.required' => 'Vui lòng nhập số credit',
             'so_tien.required' => 'Vui lòng nhập số tiền',
+
+            'credit.numeric' => 'Chỉ được nhập số',
+            'so_tien.numeric' => 'Chỉ được nhập số'
         ];
     }
 }

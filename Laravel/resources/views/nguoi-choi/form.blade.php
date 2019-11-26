@@ -18,7 +18,7 @@
                 @if(isset($nguoiChoi))
                 <form action="{{ route('nguoi-choi.xu-ly-cap-nhat', ['id' => $nguoiChoi->id]) }}" method="POST">
                 @else
-                <form action="{{ route('nguoi-choi.xu-ly-them-moi') }}" method="POST">
+                <form action="{{ route('nguoi-choi.xu-ly-them-moi') }}" method="POST" enctype="multipart/form-data">
                 @endif
                     @csrf
                     <div class="form-group">
@@ -53,11 +53,13 @@
                         <span class="text-danger">{{ $errors->first('email') }}</span>
                     </div>
                     <!-- START -->
+                    @if(!isset($nguoiChoi))
                     <div class="form-group">
                         <label for="hinh_dai_dien">Hình đại diện</label><br />
-                        <input type="file" id="hinh_dai_dien" name="hinh_dai_dien" @if(isset($nguoiChoi)) value="{{ $nguoiChoi->hinh_dai_dien }}" @endif>
+                        <input type="file" id="hinh_dai_dien" name="hinh_dai_dien">
                         <br><span class="text-danger">{{ $errors->first('hinh_dai_dien') }}</span>
                     </div>
+                    @endif
                     <!-- END -->
                     <div class="form-group">
                         <label for="diem_cao_nhat">Điểm cao nhất</label>
@@ -70,7 +72,7 @@
                         <span class="text-danger">{{ $errors->first('credit') }}</span>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($nguoiChoi)) Cập Nhật @else Thêm @endif</button>
-                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
+                    <a class="btn btn-warning" href="{{ route('nguoi-choi.danh-sach') }}">Hủy</a>
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

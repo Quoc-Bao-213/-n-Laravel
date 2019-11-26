@@ -51,8 +51,7 @@
                         <span class="text-danger">{{ $errors->first('dap_an') }}</span>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($cauHoi)) Cập Nhật @else Thêm @endif</button>
-                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
-
+                    <a class="btn btn-warning" href="{{ route('cau-hoi.danh-sach') }}">Hủy</a>
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

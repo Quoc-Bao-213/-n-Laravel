@@ -17,7 +17,7 @@
                         <span class="text-danger">{{ $errors->first('ten_linh_vuc') }}</span>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($linhVuc)) Cập Nhật @else Thêm @endif</button>
-                    <button type="button" class="btn btn-warning" onclick="window.history.back();">Hủy</button>
+                    <a class="btn btn-warning" href="{{ route('linh-vuc.danh-sach') }}">Hủy</a>
                 </form>
             </div> <!-- end card-body-->
         </div> <!-- end card-->

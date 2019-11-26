@@ -334,21 +334,39 @@
                     <li class="has-submenu">
                         <a href="{{ route('nguoi-choi.danh-sach') }}">
                             <i class="la la-dashboard"></i>Người Chơi
+                            <div class="arrow-down"></div>
                         </a>
+                        <ul class="submenu">
+                            <li class="has-submenu">
+                                <a href="{{ route('nguoi-choi.them-moi') }}"><i class="fe-bookmark mr-1"></i> Thêm Người Chơi</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <!-- Lĩnh Vực -->
                     <li class="has-submenu">
                         <a href="{{ route('linh-vuc.danh-sach') }}">
                             <i class="la la-cube"></i>Lĩnh Vực
+                            <div class="arrow-down"></div>
                         </a>
+                        <ul class="submenu">
+                            <li class="has-submenu">
+                                <a href="{{ route('linh-vuc.them-moi') }}"><i class="fe-bookmark mr-1"></i> Thêm Lĩnh Vực</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <!-- Câu Hỏi -->
                     <li class="has-submenu">
                         <a href="{{ route('cau-hoi.danh-sach') }}">
                             <i class="la la-clone"></i>Câu Hỏi
+                            <div class="arrow-down"></div>
                         </a>
+                        <ul class="submenu">
+                            <li class="has-submenu">
+                                <a href="{{ route('cau-hoi.them-moi') }}"><i class="fe-bookmark mr-1"></i> Thêm Câu Hỏi</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <!-- Gói Credit -->
@@ -359,6 +377,9 @@
                         <ul class="submenu">
                             <li class="has-submenu">
                                 <a href="{{ route('lich-su-mua-credit.danh-sach') }}"><i class="fe-bookmark mr-1"></i> Lịch Sử Mua Credit</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('goi-credit.them-moi') }}"><i class="fe-bookmark mr-1"></i> Thêm Gói Credit</a>
                             </li>
                         </ul>
                     </li>
