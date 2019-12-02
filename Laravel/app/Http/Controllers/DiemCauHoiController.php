@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CauHinhApp;
+use App\CauHinhDiemCauHoi;
 
-class AppController extends Controller
+class DiemCauHoiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AppController extends Controller
      */
     public function index()
     {
-        $lstCauHinhApp = CauHinhApp::all();
-        return view('cau-hinh-app.danh-sach', compact('lstCauHinhApp'));
+        $listDiemCauHoi = CauHinhDiemCauHoi::all();
+        return view('cau-hinh-diem.danh-sach', compact('listDiemCauHoi'));
     }
 
     /**
@@ -25,7 +25,7 @@ class AppController extends Controller
      */
     public function create()
     {
-        //
+        return view('cau-hinh-diem.form');
     }
 
     /**
@@ -36,7 +36,13 @@ class AppController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $diemCauHoi = new CauHinhDiemCauHoi;
+        
+        $diemCauHoi->thu_tu = $request->thu_tu;
+        $diemCauHoi->diem = $request->diem;
+        $diemCauHoi->save();
+
+        return view('cau-hinh-diem.danh-sach')->with('cap-nhat',"Thêm mới thành công");
     }
 
     /**
@@ -58,8 +64,8 @@ class AppController extends Controller
      */
     public function edit($id)
     {
-        $cauHinhApp = CauHinhApp::find($id);
-        return View('cau-hinh-app.form', compact('cauHinhApp'));
+        $diemCauHoi = CauHinhDiemCauHoi::find($id);
+        return View('cau-hinh-diem.form', compact('diemCauHoi'));
     }
 
     /**
@@ -71,13 +77,13 @@ class AppController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cauHinhApp = CauHinhApp::find($id);
-        
-        $cauHinhApp->co_hoi_sai = $request->co_hoi_sai;
-        $cauHinhApp->thoi_gian_tra_loi = $request->thoi_gian_tra_loi;
-        $cauHinhApp->save();
+        $diemCauHoi = CauHinhDiemCauHoi::find($id);
 
-        return redirect()->route('cau-hinh-app.danh-sach')->with('cap-nhat',"Cập nhật thành công");
+        $diemCauHoi->thu_tu = $request->thu_tu;
+        $diemCauHoi->diem = $request->diem;
+        $diemCauHoi->save();
+
+        return view('cau-hinh-diem.danh-sach')->with('cap-nhat',"Cập nhật thành công");
     }
 
     /**
@@ -88,9 +94,9 @@ class AppController extends Controller
      */
     public function destroy($id)
     {
-        $cauHinhApp = CauHinhApp::find($id);
-        $cauHinhApp->delete();
+        $diemCauHoi = CauHinhDiemCauHoi::find($id);
+        $diemCauHoi->delete();
 
-        return redirect()->route('cau-hinh-app.danh-sach')->with('cap-nhat',"Xóa thành công");
+        return redirect()->route('cau-hinh-diem.danh-sach')->with('cap-nhat',"Xóa thành công");
     }
 }

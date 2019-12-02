@@ -394,99 +394,30 @@
                             </li>
                         </ul>
                     </li>
-
+                    
+                    <!-- Cấu Hình App -->
                     <li class="has-submenu">
-                        <a href="#"> <i class="la la-flask"></i>Admin UI <div class="arrow-down"></div></a>
+                        <a href="{{ route('cau-hinh-app.danh-sach') }}"> <i class="fe-settings"></i>Cấu Hình App</a>
+                    </li>
+
+                    <!-- Cấu Hình Điểm -->
+                    <li class="has-submenu">
+                        <a href="{{ route('cau-hinh-diem.danh-sach') }}">
+                            <i class="fe-settings"></i>Cấu Hình Điểm <div class="arrow-down"></div></a>
                         <ul class="submenu">
-                            <li>
-                                <a href="admin-widgets.html">Widgets</a>
-                            </li>
-                            <li>
-                                <a href="admin-sweet-alert.html">Sweet Alert</a>
-                            </li>
-                            <li>
-                                <a href="admin-nestable.html">Nestable List</a>
-                            </li>
-                            <li>
-                                <a href="admin-range-slider.html">Range Slider</a>
-                            </li>
-                            <li>
-                                <a href="admin-tour.html">Tour Page</a>
-                            </li>
-                            <li>
-                                <a href="admin-lightbox.html">Lightbox</a>
-                            </li>
-                            <li>
-                                <a href="admin-treeview.html">Treeview</a>
+                            <li class="has-submenu">
+                                <a href="{{ route('cau-hinh-diem.them-moi') }}"><i class="fe-bookmark mr-1"></i>Thêm Mới</a>
                             </li>
                         </ul>
                     </li>
 
+                    <!-- Cấu Hình Điểm -->
                     <li class="has-submenu">
-                        <a href="#"> <i class="la la-file-text-o"></i>Pages <div class="arrow-down"></div></a>
-                        <ul class="submenu megamenu">
-                            <li>
-                                <ul>
-                                    <li>
-                                        <a href="pages-starter.html">Starter</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-login.html">Log In</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-register.html">Register</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-recoverpw.html">Recover Password</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-lock-screen.html">Lock Screen</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-logout.html">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <ul>
-                                    <li>
-                                        <a href="pages-confirm-mail.html">Confirm Mail</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-404.html">Error 404</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-404-alt.html">Error 404-alt</a>
-                                    </li>
-                                    <li>
-                                        <a href="pages-500.html">Error 500</a>
-                                    </li>
-                                    <li>
-                                        <a href="extras-profile.html">Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="extras-timeline.html">Timeline</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <ul>
-                                    <li>
-                                        <a href="extras-invoice.html">Invoice</a>
-                                    </li>
-                                    <li>
-                                        <a href="extras-faqs.html">FAQs</a>
-                                    </li>
-                                    <li>
-                                        <a href="extras-pricing.html">Pricing</a>
-                                    </li>
-                                    <li>
-                                        <a href="extras-maintenance.html">Maintenance</a>
-                                    </li>
-                                    <li>
-                                        <a href="extras-coming-soon.html">Coming Soon</a>
-                                    </li>
-                                </ul>
+                        <a href="{{ route('cau-hinh-tro-giup.danh-sach') }}">
+                            <i class="fe-settings"></i>Cấu Hình Trợ Giúp <div class="arrow-down"></div></a>
+                        <ul class="submenu">
+                            <li class="has-submenu">
+                                <a href="{{ route('cau-hinh-tro-giup.them-moi') }}"><i class="fe-bookmark mr-1"></i>Thêm Trợ Giúp Mới</a>
                             </li>
                         </ul>
                     </li>

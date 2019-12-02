@@ -20,7 +20,7 @@
                                     <li class="breadcrumb-item active">Credit</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Mua Credit</h4>
+                            <h3 class="page-title">Mua Credit</h3>
                         </div>
                     </div>
                 </div>     
@@ -31,7 +31,7 @@
             <div class="card-body">
                 <h4 class="header-title">Danh Sách Gói Credit</h4>
                 <a href="{{ route('goi-credit.them-moi') }}" class="btn btn-primary waves-effect waves-light">Thêm mới</a><br/><br/>
-                <table id="goi-credit-table" class="table dt-responsive nowrap">
+                <table id="goi-credit-table" class="table table-striped dt-responsive nowrap">
                     <thead>
                         <tr>
                             <th>ID</th>

@@ -20,7 +20,7 @@
                                     <li class="breadcrumb-item active">Cấu Hình App</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Cấu Hình App</h4>
+                            <h3 class="page-title">Cấu Hình App</h3>
                         </div>
                     </div>
                 </div>     
@@ -29,8 +29,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title">Cấu hình App</h4>
-                    <table id="linh-vuc-table" class="table dt-responsive nowrap">
+                <h4 class="header-title">Danh Sách Cấu hình App</h4>
+                    <table id="cau-hinh-app-table" class="table table-striped dt-responsive nowrap">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -86,7 +86,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#linh-vuc-table").DataTable({
+        $("#cau-hinh-app-table").DataTable({
             language:{
                 paginate:{
                     previous:"<i class='mdi mdi-chevron-left'>",

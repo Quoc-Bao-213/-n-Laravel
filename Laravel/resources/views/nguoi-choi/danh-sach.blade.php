@@ -29,7 +29,7 @@
                                     <li class="breadcrumb-item active">Người chơi</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Người Chơi</h4>
+                            <h3 class="page-title">Người Chơi</h3>
                         </div>
                     </div>
                 </div>     
@@ -40,7 +40,7 @@
             <div class="card-body">
                 <h4 class="header-title">Danh Sách Người Chơi</h4>
                 <a href="{{ route('nguoi-choi.them-moi') }}" class="btn btn-primary waves-effect waves-light">Thêm mới</a><br/><br/>
-                <table id="nguoi-choi-table" class="table dt-responsive nowrap">
+                <table id="nguoi-choi-table" class="table table-striped dt-responsive nowrap">
                     <thead>
                         <tr>
                             <th>ID</th>

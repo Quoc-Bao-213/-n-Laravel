@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CauHinhApp;
+use App\CauHinhTroGiup;
 
-class AppController extends Controller
+class TroGiupController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AppController extends Controller
      */
     public function index()
     {
-        $lstCauHinhApp = CauHinhApp::all();
-        return view('cau-hinh-app.danh-sach', compact('lstCauHinhApp'));
+        $listTroGiup = CauHinhTroGiup::all();
+        return view('cau-hinh-tro-giup.danh-sach', compact('listTroGiup'));
     }
 
     /**
@@ -25,7 +25,7 @@ class AppController extends Controller
      */
     public function create()
     {
-        //
+        return view('cau-hinh-tro-giup.form');
     }
 
     /**
@@ -36,7 +36,13 @@ class AppController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $troGiup = new CauHinhTroGiup;
+        $troGiup->loai_tro_giup = $request->loai_tro_giup;
+        $troGiup->thu_tu = $request->thu_tu;
+        $troGiup->credit = $request->credit;
+        $troGiup->save();
+
+        return redirect()->route('cau-hinh-tro-giup.danh-sach')->with('cap-nhat',"Thêm mới thành công");
     }
 
     /**
@@ -58,8 +64,8 @@ class AppController extends Controller
      */
     public function edit($id)
     {
-        $cauHinhApp = CauHinhApp::find($id);
-        return View('cau-hinh-app.form', compact('cauHinhApp'));
+        $troGiup = CauHinhTroGiup::find($id);
+        return View('cau-hinh-tro-giup.form', compact('troGiup'));
     }
 
     /**
@@ -71,13 +77,14 @@ class AppController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cauHinhApp = CauHinhApp::find($id);
+        $troGiup = CauHinhTroGiup::find($id);
         
-        $cauHinhApp->co_hoi_sai = $request->co_hoi_sai;
-        $cauHinhApp->thoi_gian_tra_loi = $request->thoi_gian_tra_loi;
-        $cauHinhApp->save();
+        $troGiup->loai_tro_giup = $request->loai_tro_giup;
+        $troGiup->thu_tu = $request->thu_tu;
+        $troGiup->credit = $request->credit;
+        $troGiup->save();
 
-        return redirect()->route('cau-hinh-app.danh-sach')->with('cap-nhat',"Cập nhật thành công");
+        return redirect()->route('cau-hinh-tro-giup.danh-sach')->with('cap-nhat',"Cập nhật thành công");
     }
 
     /**
@@ -88,9 +95,9 @@ class AppController extends Controller
      */
     public function destroy($id)
     {
-        $cauHinhApp = CauHinhApp::find($id);
-        $cauHinhApp->delete();
+        $troGiup = CauHinhTroGiup::find($id);
+        $troGiup->delete();
 
-        return redirect()->route('cau-hinh-app.danh-sach')->with('cap-nhat',"Xóa thành công");
+        return redirect()->route('cau-hinh-tro-giup.danh-sach')->with('cap-nhat',"Xóa thành công");
     }
 }

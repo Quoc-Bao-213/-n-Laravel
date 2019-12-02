@@ -11,7 +11,7 @@
                                     <li class="breadcrumb-item active">Credit</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Lịch sử mua credit</h4>
+                            <h3 class="page-title">Lịch sử mua credit</h3>
                         </div>
                     </div>
                 </div>     
@@ -20,8 +20,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title">Lịch Sử Mua Credit</h4>
-                <table id="lich-su-mua-credit-table" class="table dt-responsive nowrap">
+                <h4 class="header-title">Danh Sách Lịch Sử Mua Credit</h4>
+                <table id="lich-su-mua-credit-table" class="table table-striped table-striped dt-responsive nowrap">
                     <thead>
                         <tr>
                             <th>ID</th>

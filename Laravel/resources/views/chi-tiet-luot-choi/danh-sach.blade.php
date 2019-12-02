@@ -12,7 +12,7 @@
                                     <li class="breadcrumb-item active">Lượt chơi</li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Chi tiết lượt chơi</h4>
+                            <h3 class="page-title">Chi tiết lượt chơi</h3>
                         </div>
                     </div>
                 </div>     
@@ -21,8 +21,8 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title">Chi Tiết Lượt Chơi</h4>
-                <table id="chi-tiet-luot-choi-table" class="table dt-responsive nowrap">
+                <h4 class="header-title">Danh Sách Chi Tiết Lượt Chơi</h4>
+                <table id="chi-tiet-luot-choi-table" class="table table-striped dt-responsive nowrap">
                     <thead>
                         <tr>
                             <th>ID</th>
