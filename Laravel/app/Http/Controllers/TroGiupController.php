@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CauHinhTroGiup;
+use App\Http\Requests\CauHinhTroGiupRequest; 
 
 class TroGiupController extends Controller
 {
@@ -34,7 +35,7 @@ class TroGiupController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CauHinhTroGiupRequest $request)
     {
         $troGiup = new CauHinhTroGiup;
         $troGiup->loai_tro_giup = $request->loai_tro_giup;

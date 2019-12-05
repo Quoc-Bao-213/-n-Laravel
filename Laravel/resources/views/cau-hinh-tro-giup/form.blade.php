@@ -14,17 +14,17 @@
                     <div class="form-group">
                         <label for="loai_tro_giup">Loại Trợ Giúp</label>
                         <input type="text" class="form-control" id="loai_tro_giup" name="loai_tro_giup" @if(isset($troGiup)) value="{{ $troGiup->loai_tro_giup }}" @endif>
-                        <!-- <span class="text-danger">{{ $errors->first('ten_linh_vuc') }}</span> -->
+                        <span class="text-danger">{{ $errors->first('loai_tro_giup') }}</span>
                     </div>
                     <div class="form-group">
                         <label for="thu_tu">Thứ Tự</label>
                         <input type="text" class="form-control" id="thu_tu" name="thu_tu" @if(isset($troGiup)) value="{{ $troGiup->thu_tu }}" @endif>
-                        <!-- <span class="text-danger">{{ $errors->first('ten_linh_vuc') }}</span> -->
+                        <span class="text-danger">{{ $errors->first('thu_tu') }}</span>
                     </div>
                     <div class="form-group">
                         <label for="credit">Credit</label>
                         <input type="text" class="form-control" id="credit" name="credit" @if(isset($troGiup)) value="{{ $troGiup->credit }}" @endif>
-                        <!-- <span class="text-danger">{{ $errors->first('ten_linh_vuc') }}</span> -->
+                        <span class="text-danger">{{ $errors->first('credit') }}</span>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($troGiup)) Cập Nhật @else Thêm @endif</button>
                     <a class="btn btn-warning" href="{{ route('cau-hinh-tro-giup.danh-sach') }}">Hủy</a>

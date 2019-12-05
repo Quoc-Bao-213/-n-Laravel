@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CauHinhDiemCauHoi;
+use App\Http\Requests\CauHinhDiemCauHoiRequest; 
 
 class DiemCauHoiController extends Controller
 {
@@ -34,7 +35,7 @@ class DiemCauHoiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CauHinhDiemCauHoiRequest $request)
     {
         $diemCauHoi = new CauHinhDiemCauHoi;
         

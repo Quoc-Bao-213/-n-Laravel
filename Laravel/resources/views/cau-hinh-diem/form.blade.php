@@ -14,12 +14,12 @@
                     <div class="form-group">
                         <label for="thu_tu">Thứ Tự</label>
                         <input type="text" class="form-control" id="thu_tu" name="thu_tu" @if(isset($diemCauHoi)) value="{{ $diemCauHoi->thu_tu }}" @endif>
-                        <!-- <span class="text-danger">{{ $errors->first('ten_linh_vuc') }}</span> -->
+                        <span class="text-danger">{{ $errors->first('thu_tu') }}</span>
                     </div>
                     <div class="form-group">
                         <label for="diem">Điểm</label>
                         <input type="text" class="form-control" id="diem" name="diem" @if(isset($diemCauHoi)) value="{{ $diemCauHoi->diem }}" @endif>
-                        <!-- <span class="text-danger">{{ $errors->first('ten_linh_vuc') }}</span> -->
+                        <span class="text-danger">{{ $errors->first('diem') }}</span>
                     </div>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">@if(isset($diemCauHoi)) Cập Nhật @else Thêm @endif</button>
                     <a class="btn btn-warning" href="{{ route('cau-hinh-diem.danh-sach') }}">Hủy</a>
