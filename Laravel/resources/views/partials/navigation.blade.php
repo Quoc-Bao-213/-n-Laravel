@@ -154,6 +154,11 @@
                             <span>Settings</span>
                         </a>
 
+                        <!-- item-->
+                        <a href="{{ route('quan-tri-vien.cap-nhat', ['id' => Auth::user()->id]) }}" class="dropdown-item notify-item">
+                            <i class="fe-settings"></i>
+                            <span>Đổi mật khẩu</span>
+                        </a>
 
                         <div class="dropdown-divider"></div>
 

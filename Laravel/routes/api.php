@@ -25,3 +25,7 @@ Route::get('cau-hoi','API\apiCauHoi@laydsCauHoi');
 
 // /api/goi-credit load api cauhoi them linh vuc
 Route::get('goi-credit','API\apiCredit@laydsCredit');
+// CauHinhAppController
+Route::get('cau-hinh-app','API\apiCauHinhApp@laydsCredit');
+// ChiTietLuotChoiController
+Route::get('cau-hinh-app','API\apiCauHinhApp@laydsCredit');
