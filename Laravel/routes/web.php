@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function(){
     // Layout Chính
     Route::get('/', function () {
         return view('layout');
-    })->name('trang-chu');;
+    })->name('trang-chu');
     //Layout thong tin admin
     Route::prefix('quan-tri-vien')->group(function () {
         Route::name('quan-tri-vien.')->group(function () {

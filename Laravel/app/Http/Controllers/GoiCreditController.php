@@ -78,7 +78,7 @@ class GoiCreditController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ThemGoiCreditRequest $request, $id)
     {
         $goiCredit = GoiCredit::find($id);
         $goiCredit->ten_goi = $request->ten_goi;

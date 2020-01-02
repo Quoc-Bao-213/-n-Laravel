@@ -89,7 +89,7 @@ class CauHoiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ThemCauHoiRequest $request, $id)
     {
         $cauHoi = CauHoi::find($id);
 

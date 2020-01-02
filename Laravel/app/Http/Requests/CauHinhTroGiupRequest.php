@@ -34,7 +34,7 @@ class CauHinhTroGiupRequest extends FormRequest
         return [
             'loai_tro_giup.required' => 'Loại trợ giúp không được bỏ trống',
             'thu_tu.required' => 'Thứ tự không được bỏ trống',
-            'credit' => 'Credit Không được bỏ trống',
+            'credit.required' => 'Credit Không được bỏ trống',
 
             'loai_tro_giup.numeric' => 'Loại trợ giúp chỉ được nhập số',
             'thu_tu.numeric' => 'Thứ tự chỉ được nhập số',
